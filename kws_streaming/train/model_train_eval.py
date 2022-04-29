@@ -366,10 +366,10 @@ if __name__ == '__main__':
 
   # WANDB LOGGING INIT
   wandb.init(project="kwt-improvements", 
-           name = "First try", # needs to be changed between runs
-           entity="adeeplearners",
+           name = "time_test", # needs to be changed between runs
+           entity="kwt-project",
            config = {
-               "Notes": 'Default Hyper Parameters, Swish activation.',
+               "Notes": 'Testing time logging',
            }
            )
 
