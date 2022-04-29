@@ -171,10 +171,12 @@ def train(flags):
 		warmup_steps = int((num_train / flags.batch_size) * flags.warmup_epochs)
 		first_decay_steps=training_steps_max
 
-	start_time = time.time()
+	start_time = time.time() # time before training
 
 	# Training loop.
 	for training_step in range(start_step, training_steps_max + 1):
+
+		step_start_time = time.time() # time at start of training that step
 
 		if training_step > 0:
 			offset = (training_step -
@@ -239,6 +241,8 @@ def train(flags):
 
 		is_last_step = (training_step == training_steps_max)
 
+		step_end_time = time.time() # end of step time
+
 		if (training_step % flags.eval_step_interval) == 0 or is_last_step:
 			set_size = audio_processor.set_size('validation')
 			set_size = int(set_size / flags.batch_size) * flags.batch_size
@@ -297,7 +301,8 @@ def train(flags):
 			logging.info('So far the best validation accuracy is %.2f%%',
 									 (best_accuracy * 100))
 
-		WandB_log['Training/time'] = time.time() - start_time
+		WandB_log['Training/time_cum'] = time.time() - start_time
+		WandB_log['Training/time_per_step'] = step_end_time - step_start_time
 			
 		wandb.log(WandB_log)
 	tf.keras.backend.set_learning_phase(0)
