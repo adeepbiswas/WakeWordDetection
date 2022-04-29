@@ -1,2 +1,4 @@
 data2
 wandb
+**/__pycache__/
+models_data_v2_12_labels/my_model
