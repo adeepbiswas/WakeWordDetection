@@ -366,7 +366,7 @@ if __name__ == '__main__':
 
   # WANDB LOGGING INIT
   wandb.init(project="kwt-improvements", 
-           name = "NoNorm (layernorm replaced)", # needs to be changed between runs
+           name = "NoNorm + swish", # needs to be changed between runs
            entity="kwt-project",
            config = {
                "Notes": 'Testing time logging',
