@@ -13,7 +13,7 @@ CMD_TRAIN="python -m kws_streaming.train.model_train_eval"
 $CMD_TRAIN \
 --data_url '' \
 --data_dir $DATA_PATH/ \
---train_dir $MODELS_PATH/my_model/ \
+--train_dir $MODELS_PATH/my_model_nonorm/ \
 --mel_upper_edge_hertz 7600 \
 --optimizer 'adamw' \
 --lr_schedule 'cosine' \

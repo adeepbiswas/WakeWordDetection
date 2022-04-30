@@ -29,6 +29,30 @@ from tensorflow.python.ops import math_ops
 
 TRUNC_STD = 0.02
 
+# ################## NoNorm #####################
+class NoNorm(tf.keras.layers.Layer):
+
+    def __init__(self):
+        super(NoNorm, self).__init__()
+
+    def build(self, input_shape):
+        self.w = self.add_weight(
+            name = "w",
+            shape = input_shape,
+            dtype = 'float32',
+            initializer = tf.initializers.ones()
+        )
+        self.b = self.add_weight(
+            name = "b",
+            shape = input_shape,
+            dtype = 'float32',
+            initializer = tf.initializers.zeros()
+        )
+
+    def call(self, x):
+        return x * self.w + self.b
+# ################################################
+
 
 class MultiHeadSelfAttention(tf.keras.layers.Layer):
     def __init__(self, embed_dim, num_heads=8):
@@ -92,8 +116,12 @@ class TransformerBlock(tf.keras.layers.Layer):
             ]
         )
 
-        self.layernorm1 = LayerNormalization(epsilon=1e-6)
-        self.layernorm2 = LayerNormalization(epsilon=1e-6)
+        # self.layernorm1 = LayerNormalization(epsilon=1e-6)
+        # self.layernorm2 = LayerNormalization(epsilon=1e-6)
+
+        # ############### EXPERIMENT with NoNorm ######################
+        self.layernorm1 = NoNorm()
+        self.layernorm2 = NoNorm()
 
         self.dropout1 = Dropout(dropout)
         self.dropout2 = Dropout(dropout)
