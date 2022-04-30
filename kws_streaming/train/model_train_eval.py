@@ -366,10 +366,10 @@ if __name__ == '__main__':
 
   # WANDB LOGGING INIT
   wandb.init(project="kwt-improvements", 
-           name = "time_test", # needs to be changed between runs
+           name = "data_augmentation_test", # needs to be changed between runs
            entity="kwt-project",
            config = {
-               "Notes": 'Testing time logging',
+               "Notes": 'Testing data augmentation',
            }
            )
 
