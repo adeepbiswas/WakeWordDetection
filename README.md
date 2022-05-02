@@ -2,7 +2,7 @@
 
 <img src="kwt.png" alt="drawing" width="200"/>
 
-The baseline model for this project has been taken from [Keyword Transformer: A Self-Attention Model for Keyword Spotting](https://arxiv.org/abs/2104.00769), presented at Interspeech 2021. Consider citing our paper if you find this work useful.
+The baseline model for this project has been taken from [Keyword Transformer: A Self-Attention Model for Keyword Spotting](https://arxiv.org/abs/2104.00769).
 
 
 ## Setup
@@ -93,9 +93,3 @@ To perform inference on Google Speech Commands v2 with 12 labels, run
 ```shell
 sh eval.sh
 ```
-
-## License
-
-The source files in this repository are released under the [Apache 2.0](LICENSE.txt) license.
-
-Some source files are derived from the [KWS streaming repository](https://github.com/google-research/google-research/tree/master/kws_streaming) by Google Research. These are also released under the Apache 2.0 license, the text of which can be seen in the LICENSE file on their repository.
