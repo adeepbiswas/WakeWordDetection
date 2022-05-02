@@ -1,4 +1,4 @@
-# Keyword Transformer: A Self-Attention Model for Keyword Spotting
+# Wake Word Detection using Transformers
 
 <img src="kwt.png" alt="drawing" width="200"/>
 
