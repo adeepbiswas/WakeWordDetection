@@ -83,3 +83,7 @@ To perform inference on Google Speech Commands v2 with 12 labels, run
 ```shell
 sh eval.sh
 ```
+
+## Acknowledgement
+
+This repository has been forked from https://github.com/ARM-software/keyword-transformer
