@@ -2,18 +2,8 @@
 
 <img src="kwt.png" alt="drawing" width="200"/>
 
-This is the official repository for the paper [Keyword Transformer: A Self-Attention Model for Keyword Spotting](https://arxiv.org/abs/2104.00769), presented at Interspeech 2021. Consider citing our paper if you find this work useful.
+The baseline model for this project has been taken from [Keyword Transformer: A Self-Attention Model for Keyword Spotting](https://arxiv.org/abs/2104.00769), presented at Interspeech 2021. Consider citing our paper if you find this work useful.
 
-```
-@inproceedings{berg21_interspeech,
-  author={Axel Berg and Mark O’Connor and Miguel Tairum Cruz},
-  title={{Keyword Transformer: A Self-Attention Model for Keyword Spotting}},
-  year=2021,
-  booktitle={Proc. Interspeech 2021},
-  pages={4249--4253},
-  doi={10.21437/Interspeech.2021-1286}
-}
-```
 
 ## Setup
 
@@ -27,17 +17,6 @@ mkdir data2
 mv ./speech_commands_v0.02.tar.gz ./data2
 cd ./data2
 tar -xf ./speech_commands_v0.02.tar.gz
-cd ../
-```
-
-And similarly for V1:
-
-```shell
-wget http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz
-mkdir data1
-mv ./speech_commands_v0.01.tar.gz ./data1
-cd ./data1
-tar -xf ./speech_commands_v0.01.tar.gz
 cd ../
 ```
 
@@ -56,10 +35,6 @@ To install dependencies, run
 ```shell
 pip install -r requirements.txt
 ```
-
-Tested using Tensorflow 2.4.0rc1 with CUDA 11.
-
-**Note**: Installing the correct Tensorflow version is important for reproducibility! Using more recent versions of Tensorflow results in small accuracy differences each time the model is evaluated. This might be due to a change in how the random seed generator is implemented, and therefore changes the sampling of the "unknown"  keyword class.
 
 ## Model
 The Keyword-Transformer model is defined [here](kws_streaming/models/kws_transformer.py). It takes the mel scale spectrogram as input, which has shape 98 x 40 using the default settings, corresponding to the 98 time windows with 40 frequency coefficients.
@@ -118,14 +93,6 @@ To perform inference on Google Speech Commands v2 with 12 labels, run
 ```shell
 sh eval.sh
 ```
-
-## Acknowledgements
-
-The code heavily borrows from the [KWS streaming work](https://github.com/google-research/google-research/tree/master/kws_streaming) by Google Research. For a more detailed description of the code structure, see the original authors' [README](kws_streaming/README.md).
-
-We also exploit training techniques from [DeiT](https://github.com/facebookresearch/deit).
-
-We thank the authors for sharing their code. Please consider citing them as well if you use our code.
 
 ## License
 
