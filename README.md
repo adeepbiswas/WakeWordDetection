@@ -82,6 +82,11 @@ To perform inference on Google Speech Commands v2 with 12 labels, run
 sh eval.sh
 ```
 
+Specific Experiments can be found at branches-
+1. Mish
+2. Swish+nonorm
+3. norm_change
+
 ## Acknowledgement
 
 This repository has been forked from https://github.com/ARM-software/keyword-transformer
