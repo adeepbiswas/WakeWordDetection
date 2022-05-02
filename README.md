@@ -84,7 +84,7 @@ sh eval.sh
 
 Specific Experiments can be found at branches-
 1. Mish
-2. Swish+nonorm
+2. nonorm_swish
 3. norm_change
 
 ## Acknowledgement
