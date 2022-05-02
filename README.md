@@ -78,16 +78,6 @@ To train KWT-3 with hard distillation from a pre-trained model, run
 sh distill.sh
 ```
 
-## Run inference using a pre-trained model
-
-Pre-trained weights for KWT-3, KWT-2 and KWT-1 are provided in ./models_data_v2_12_labels.
-
-|Model name|embedding dim|mlp-dim|heads|depth|#params|V2-12 accuracy|pre-trained|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|KWT-1|64|128|1|12|607K|97.7|[here](models_data_v2_12_labels/kwt1)|
-|KWT-2|128|256|2|12|2.4M|98.2|[here](models_data_v2_12_labels/kwt2)|
-|KWT-3|192|768|3|12|5.5M|98.7|[here](models_data_v2_12_labels/kwt3)|
-
 To perform inference on Google Speech Commands v2 with 12 labels, run
 
 ```shell
