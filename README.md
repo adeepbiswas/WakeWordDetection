@@ -2,6 +2,8 @@
 
 The baseline model for this project has been taken from [Keyword Transformer: A Self-Attention Model for Keyword Spotting](https://arxiv.org/abs/2104.00769).
 
+Our contribution and results can be found here - https://github.com/adeepbiswas/WakeWordDetection/blob/master/Final_Paper.pdf
+
 
 ## Setup
 
